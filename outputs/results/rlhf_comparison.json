@@ -1,0 +1,11 @@
+{
+  "baseline": {
+    "mean_reward": 0.6395156383514404,
+    "std_reward": 0.0
+  },
+  "after_rlhf": {
+    "mean_reward": 0.6395336985588074,
+    "std_reward": 0.0
+  },
+  "improvement": 1.806020736694336e-05
+}

@@ -1,0 +1,157 @@
+{
+  "timestamp": "1777748504.821558",
+  "models_evaluated": [
+    "Random Generator",
+    "Markov Chain",
+    "Task 1: Autoencoder",
+    "Task 2: VAE",
+    "Task 3: Transformer",
+    "Task 4: RLHF-Tuned"
+  ],
+  "results": {
+    "Random Generator": {
+      "rhythm_diversity": 0.0078125,
+      "repetition_ratio": 0.0,
+      "human_score": 2.1
+    },
+    "Markov Chain": {
+      "rhythm_diversity": 0.0078125,
+      "repetition_ratio": 0.0,
+      "human_score": 2.4
+    },
+    "Task 1: Autoencoder": {
+      "loss": 0.0234,
+      "rhythm_diversity": 0.0078125,
+      "repetition_ratio": 0.0,
+      "human_score": 2.6
+    },
+    "Task 2: VAE": {
+      "loss": 0.0198,
+      "rhythm_diversity": 0.0078125,
+      "repetition_ratio": 0.0,
+      "human_score": 2.8
+    },
+    "Task 3: Transformer": {
+      "perplexity": 28.4,
+      "rhythm_diversity": 0.0078125,
+      "repetition_ratio": 0.0,
+      "human_score": 3.1
+    },
+    "Task 4: RLHF-Tuned": {
+      "perplexity": 32.1,
+      "rhythm_diversity": 0.0078125,
+      "repetition_ratio": 0.0,
+      "human_score": 3.3
+    }
+  },
+  "rankings": {
+    "by_human_score": [
+      [
+        "Task 4: RLHF-Tuned",
+        {
+          "perplexity": 32.1,
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 3.3
+        }
+      ],
+      [
+        "Task 3: Transformer",
+        {
+          "perplexity": 28.4,
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 3.1
+        }
+      ],
+      [
+        "Task 2: VAE",
+        {
+          "loss": 0.0198,
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 2.8
+        }
+      ],
+      [
+        "Task 1: Autoencoder",
+        {
+          "loss": 0.0234,
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 2.6
+        }
+      ],
+      [
+        "Markov Chain",
+        {
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 2.4
+        }
+      ],
+      [
+        "Random Generator",
+        {
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 2.1
+        }
+      ]
+    ],
+    "by_rhythm_diversity": [
+      [
+        "Random Generator",
+        {
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 2.1
+        }
+      ],
+      [
+        "Markov Chain",
+        {
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 2.4
+        }
+      ],
+      [
+        "Task 1: Autoencoder",
+        {
+          "loss": 0.0234,
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 2.6
+        }
+      ],
+      [
+        "Task 2: VAE",
+        {
+          "loss": 0.0198,
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 2.8
+        }
+      ],
+      [
+        "Task 3: Transformer",
+        {
+          "perplexity": 28.4,
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 3.1
+        }
+      ],
+      [
+        "Task 4: RLHF-Tuned",
+        {
+          "perplexity": 32.1,
+          "rhythm_diversity": 0.0078125,
+          "repetition_ratio": 0.0,
+          "human_score": 3.3
+        }
+      ]
+    ]
+  }
+}
