@@ -5,6 +5,7 @@ This project implements a comprehensive pipeline for music generation using unsu
 
 ## Dataset
 The project uses three public datasets:
+https://drive.google.com/drive/folders/1qrmyBY9Sb2w9phDAgrh2LdIAuwWf4VQz?usp=drive_link 
 1. **MAESTRO v2.0.0** - Classical piano music (https://storage.googleapis.com/magentadata/datasets/maestro/v2.0.0/maestro-v2.0.0-midi.zip)
 2. **Lakh MIDI Dataset** - Multi-genre MIDI (http://hog.ee.columbia.edu/craffel/lmd/lmd_full.tar.gz)
 3. **Groove MIDI Dataset** - Jazz, drums, rhythm (https://storage.googleapis.com/magentadata/datasets/groove/groove-v1.0.0.zip)
