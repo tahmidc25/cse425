@@ -15,7 +15,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from models.task1_lstm_ae import LSTMAutoencoder, reconstruction_loss
+from models.autoencoder import LSTMAutoencoder, reconstruction_loss
 from preprocessing import midi_to_pianoroll
 
 

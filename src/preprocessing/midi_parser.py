@@ -13,8 +13,8 @@ import logging
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from preprocessing.midi_to_pianoroll import midi_to_pianoroll, segment_piano_roll
-from preprocessing.midi_to_tokens import midi_to_tokens, VOCAB_SIZE
+from preprocessing.piano_roll import midi_to_pianoroll, segment_piano_roll
+from preprocessing.tokenizer import midi_to_tokens, VOCAB_SIZE
 from preprocessing.normalize_timing import normalize_midi_timing
 
 # Setup logging

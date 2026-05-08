@@ -27,7 +27,7 @@ class MusicGenerationPipeline:
         print("PHASE: DATA PREPROCESSING")
         print("="*70)
         
-        script = self.src_dir / "preprocessing" / "dataset.py"
+        script = self.src_dir / "preprocessing" / "midi_parser.py"
         if script.exists():
             result = subprocess.run(
                 [sys.executable, "-u", str(script)],
@@ -50,10 +50,10 @@ class MusicGenerationPipeline:
         print("="*70)
         
         task_scripts = {
-            1: "train_task1.py",
-            2: "train_task2.py",
-            3: "train_task3.py",
-            4: "train_task4.py"
+            1: "train_ae.py",
+            2: "train_vae.py",
+            3: "train_transformer.py",
+            4: "train_rlhf.py"
         }
         
         if task not in task_scripts:
@@ -170,10 +170,10 @@ class MusicGenerationPipeline:
             print("="*70)
             
             task_scripts = {
-                1: "train_task1.py",
-                2: "train_task2.py",
-                3: "train_task3.py",
-                4: "train_task4.py"
+                1: "train_ae.py",
+                2: "train_vae.py",
+                3: "train_transformer.py",
+                4: "train_rlhf.py"
             }
             
             script = self.src_dir / "training" / task_scripts[task]

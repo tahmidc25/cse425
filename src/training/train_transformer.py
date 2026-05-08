@@ -15,7 +15,7 @@ import math
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from models.task3_transformer import MusicTransformer, cross_entropy_loss, compute_perplexity
+from models.transformer import MusicTransformer, cross_entropy_loss, compute_perplexity
 from preprocessing import tokens_to_midi
 
 

@@ -16,7 +16,7 @@ from sklearn.manifold import TSNE
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from models.task2_vae import VariationalAutoencoder, vae_loss
+from models.vae import VariationalAutoencoder, vae_loss
 from preprocessing import pianoroll_to_midi
 
 

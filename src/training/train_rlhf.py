@@ -15,8 +15,8 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from models.task2_vae import VariationalAutoencoder
-from models.task4_rlhf import (
+from models.vae import VariationalAutoencoder
+from models.rlhf import (
     RewardModel,
     RLHFTrainer,
     HeuristicRewardFunction,
