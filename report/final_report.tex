@@ -11,6 +11,8 @@
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -20,7 +22,7 @@
 \title{Unsupervised Neural Networks for Multi-Genre Music Generation: \\
 A Progressive Study from Autoencoders to Reinforcement Learning}
 
-\author{\IEEEauthorblockN{Tahmid Chowdhury, Asif Ahmed Joy}
+\author{\IEEEauthorblockN{Mohammad Tahmid Chowdhury, Asif Ahmed Joy}
 \IEEEauthorblockA{CSE425/EEE474 Neural Networks — Spring 2026\\
 BRAC University}}
 
@@ -100,12 +102,12 @@ where $v$ is the MIDI velocity (0-127), $T=256$ is our fixed sequence length, an
 
 A critical step is \textbf{Temporal Quantization}. We use a time resolution of $fs = 16$ steps per beat. This ensures that a single 4/4 bar corresponds to exactly 64 steps, allowing the model to learn rhythmic patterns that are invariant to the original absolute tempo of the performance.
 
-\begin{figure}[t]
-\centering
-%\includegraphics[width=\linewidth]{architecture_diagrams/preprocessing_flow.png}
-\caption{Visualization of the preprocessing pipeline: MIDI quantization, segmenting, and piano-roll normalization.}
-\label{fig:preprocessing}
-\end{figure}
+%\begin{figure}[t]
+%\centering
+%%\includegraphics[width=\linewidth]{architecture_diagrams/preprocessing_flow.png}
+%\caption{Visualization of the preprocessing pipeline: MIDI quantization, segmenting, and piano-roll normalization.}
+%\label{fig:preprocessing}
+%\end{figure}
 
 \subsubsection{MIDI to Tokens}
 Vocabulary: 228 tokens
@@ -173,12 +175,12 @@ D_{\text{KL}} = -\frac{1}{2} \sum_{j=1}^{32} \left(1 + \log \sigma_j^2 - \mu_j^2
 
 We utilize a $\beta$-weighting scheme ($\beta = 0.5$) to prevent "posterior collapse," where the model ignores the latent code and relies solely on the autoregressive properties of the decoder.
 
-\begin{figure}[h]
-\centering
-%\includegraphics[width=0.8\linewidth]{architecture_diagrams/vae_arch.png}
-\caption{Task 2: Variational Autoencoder architecture with reparameterization neck.}
-\label{fig:vae_arch}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%%\includegraphics[width=0.8\linewidth]{architecture_diagrams/vae_arch.png}
+%\caption{Task 2: Variational Autoencoder architecture with reparameterization neck.}
+%\label{fig:vae_arch}
+%\end{figure}
 
 \subsubsection{Latent Interpolation}
 One of the primary advantages of the VAE is the continuity of its latent space. Given two musical sequences $X_1$ and $X_2$ representing different genres, we encode them to get latent vectors $z_1 = \mu(X_1)$ and $z_2 = \mu(X_2)$. We then perform linear interpolation:
@@ -196,12 +198,12 @@ The core of the Transformer is the Scaled Dot-Product Attention:
 \end{equation}
 In the decoder, we apply a causal mask to the attention matrix to ensure that the prediction for step $t$ only depends on steps $1 \dots t-1$. This is essential for the unsupervised learning of sequence probability distributions.
 
-\begin{figure}[t]
-\centering
-%\includegraphics[width=0.7\linewidth]{architecture_diagrams/transformer_block.png}
-\caption{Task 3: GPT-style Transformer block with causal self-attention.}
-\label{fig:trans_arch}
-\end{figure}
+%\begin{figure}[t]
+%\centering
+%%\includegraphics[width=0.7\linewidth]{architecture_diagrams/transformer_block.png}
+%\caption{Task 3: GPT-style Transformer block with causal self-attention.}
+%\label{fig:trans_arch}
+%\end{figure}
 
 \subsubsection{Perplexity Metric}
 To evaluate the model's generative performance, we compute Perplexity (PPL), which measures how well the probability distribution predicts a sample:
@@ -291,45 +293,45 @@ Epochs & 50 & 50 & 30 & 300 \\
 
 Generated 5 MIDI samples from the latent space of the MAESTRO-trained AE. The model achieved a stable reconstruction loss of 0.0234. Qualitatively, the generated samples follow basic harmonic progressions but often suffer from "averaging" effects, where the output notes are slightly blurred across time steps.
 
-\begin{figure}[h]
-\centering
-%\includegraphics[width=\linewidth]{outputs/plots/loss_curves/task1_loss.png}
-\caption{Task 1: Training and Validation loss curve for the LSTM Autoencoder.}
-\label{fig:task1_loss}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%%\includegraphics[width=\linewidth]{outputs/plots/loss_curves/task1_loss.png}
+%\caption{Task 1: Training and Validation loss curve for the LSTM Autoencoder.}
+%\label{fig:task1_loss}
+%\end{figure}
 
 The Rhythm Diversity score (0.62) confirms that while the model learns to play notes, it often defaults to simple quarter-note or eighth-note patterns, lacking the syncopation found in the training data.
 
 The VAE produced 8 diverse samples and enabled a latent interpolation experiment. The KL divergence settled at 2.31, indicating that the latent space is well-regularized and follows a Gaussian prior.
 
-\begin{figure}[h]
-\centering
-%\includegraphics[width=\linewidth]{outputs/plots/loss_curves/task2_loss.png}
-\caption{Task 2: VAE loss curves (Reconstruction vs. KL components).}
-\label{fig:task2_loss}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%%\includegraphics[width=\linewidth]{outputs/plots/loss_curves/task2_loss.png}
+%\caption{Task 2: VAE loss curves (Reconstruction vs. KL components).}
+%\label{fig:task2_loss}
+%\end{figure}
 
 As seen in Fig.~\ref{fig:task2_loss}, the model successfully avoids posterior collapse. Qualitative analysis of the interpolation results shows that the transition from Classical to Jazz involves a gradual increase in "blue notes" (accidentals) and swing-style rhythmic shifts, demonstrating that the VAE has successfully encoded stylistic features in its latent manifold.
 
 The Transformer achieved the highest scores for musicality and coherence. With a validation perplexity of 28.4, it significantly outperformed the Markov baseline (PPL $\approx 156$). 
 
-\begin{figure}[h]
-\centering
-%\includegraphics[width=\linewidth]{outputs/plots/loss_curves/task3_loss.png}
-\caption{Task 3: Cross-entropy loss during Transformer training.}
-\label{fig:task3_loss}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%%\includegraphics[width=\linewidth]{outputs/plots/loss_curves/task3_loss.png}
+%\caption{Task 3: Cross-entropy loss during Transformer training.}
+%\label{fig:task3_loss}
+%\end{figure}
 
 The 10 generated compositions (up to 512 tokens) exhibit phrase-level structure, where a melodic motif introduced in the first few bars is repeated or varied later in the piece. This long-range dependency is a direct result of the self-attention mechanism, which the previous LSTM-based models lacked.
 
 Fine-tuning the generator with policy gradients resulted in a notable increase in "musicality" according to our heuristic reward. The mean reward increased by 18\% over 300 steps.
 
-\begin{figure}[h]
-\centering
-%\includegraphics[width=\linewidth]{outputs/plots/survey_results/rlhf_comparison.png}
-\caption{Comparison of reward distribution before and after RLHF tuning.}
-\label{fig:rlhf_comp}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%%\includegraphics[width=\linewidth]{outputs/plots/survey_results/rlhf_comparison.png}
+%\caption{Comparison of reward distribution before and after RLHF tuning.}
+%\label{fig:rlhf_comp}
+%\end{figure}
 
 The human-simulated survey results (Fig.~\ref{fig:rlhf_comp}) show that participants consistently preferred the RLHF-tuned samples. The model learned to avoid dissonant pitch clusters and maintained a more steady rhythmic pulse, which were explicitly rewarded by the heuristic scoring function.
 

@@ -14,9 +14,11 @@ The project uses three public datasets:
 | Lakh MIDI Dataset | Multi-Genre Collection | [Download](http://hog.ee.columbia.edu/craffel/lmd/lmd_full.tar.gz) |
 | Groove MIDI Dataset | Jazz / Drums / Rhythm | [Download](https://storage.googleapis.com/magentadata/datasets/groove/groove-v1.0.0.zip) |
 
-**Google Drive Links:**
+**Project Links:**
+- **GitHub Repository:** [tahmidc25/cse425](https://github.com/tahmidc25/cse425)
+- **Presentation Video:** [YouTube Link](https://youtu.be/7SFriD-ActU)
 - **Generated MIDI Samples:** [MIDI Folder](https://drive.google.com/drive/folders/1uzn5TuCNnX0NhhR_5V-xmwnIRJ9U6bV9?usp=drive_link)
-- **Final Project Report (PDF):** [Project Report](https://drive.google.com/file/d/1MrLcGmdKXUFBFOduWB7VrFtVaoAfQDGq/view?usp=drive_link)
+- **Final Project Report (PDF):** [Project Report](https://drive.google.com/file/d/1MlfM0BJ9oYoMHKENEyIucgQiJ-gw-anq/view?usp=drive_link)
 
 ## Project Structure
 
@@ -211,7 +213,7 @@ CSE425/EEE474 Neural Networks — Spring 2026 Course Project
 | Name | Role |
 |------|------|
 | Asif Ahmed Joy | Task 1 & Task 2 |
-| Tahmid Chowdhury | Task 3 & Task 4 |
+| Mohammad Tahmid Chowdhury | Task 3 & Task 4 |
 
 ## Group Member Contributions
 
@@ -224,7 +226,7 @@ CSE425/EEE474 Neural Networks — Spring 2026 Course Project
 | **Baselines** | Implemented the Random Note Generator and Markov Chain baseline models (`baselines.py`) |
 | **Report** | Wrote the Methodology sections for Task 1 and Task 2, dataset description, and preprocessing pipeline |
 
-### Tahmid Chowdhury
+### Mohammad Tahmid Chowdhury
 | Area | Contribution |
 |------|-------------|
 | **Task 3: Transformer** | Designed and implemented the GPT-style Transformer architecture (`transformer.py`) with causal masking, 8 attention heads, 6 layers, d_model=512. Trained with cross-entropy loss and evaluated using perplexity. Generated 10 long-sequence MIDI compositions |
